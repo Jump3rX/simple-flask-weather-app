@@ -1,0 +1,15 @@
+
+h1{
+    color: black;
+}
+.container{
+    padding-top: 10%;
+    padding-left: 30%;
+}
+.border{
+    border-left: solid 2px;
+    height: 30%;
+    left: 50%;
+    margin-left: -3px;
+    top: 0;
+}

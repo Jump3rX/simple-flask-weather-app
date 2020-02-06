@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form method="POST">
+                <div class="form-group">
+                    
+                    <input class="form-control" type="text" name="city" placeholder="Enter City Name">
+                </div>
+                <button type="submit" class="btn btn-success btn-lg btn-block">Go <i class="fas fa-arrow-right"></i></button>
+            </form>
+        </div>
+        <div class="border"></div>
+        <div class="col">
+            <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">{{weather.description}}<br>
+            <label for="">City: {{weather.city}}</label><br>
+            <label for="">Temp (Kelvin): {{weather.temp}}</label> <br>
+            <label for="">Atmospheric Pressure (kPa): {{weather.pressure}}</label><br>
+            <label for="">Humidity: {{weather.humidity}}%</label><br>
+            <small><i>To convert kelvin to °C: (temp in kelvin)K-273.15 = -273.1°C</i></small>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
