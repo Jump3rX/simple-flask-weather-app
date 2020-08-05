@@ -23,6 +23,7 @@ def index():
         'icon':x['weather'][0]['icon'],
         'pressure':x['main']['pressure'],
         'humidity':x['main']['humidity'],
+        'visibility': x['visibility'],
         }
     return render_template("index.html",weather=weather)
     
