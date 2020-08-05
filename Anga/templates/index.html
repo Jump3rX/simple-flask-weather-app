@@ -1,27 +1,71 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <form method="POST">
-                <div class="form-group">
-                    
-                    <input class="form-control" type="text" name="city" placeholder="Enter City Name">
-                </div>
-                <button type="submit" class="btn btn-success btn-lg btn-block">Go <i class="fas fa-arrow-right"></i></button>
-            </form>
+    <center>
+        <form method="POST">
+            <div class="form-group">
+                <input class="form-control" type="text" name="city" placeholder="Enter City Name">
+            </div>
+            <button type="submit" class="btn btn-success btn-lg">Search <i
+                    class="fas fa-arrow-right"></i></button>
+        </form><br>
+    </center>
+
+    <div class="card-deck">
+
+        <div class="card">
+            <h5 class="card-header">City <img src="https://img.icons8.com/color/30/000000/city-buildings.png" />
+            </h5>
+            <div class="card-body">
+                <p class="card-text">{{weather.city|capitalize}}</p>
+            </div>
         </div>
-        <div class="border"></div>
-        <div class="col">
-            <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">{{weather.description}}<br>
-            <label for="">City: {{weather.city}}</label><br>
-            <label for="">Temp (Kelvin): {{weather.temp}}</label> <br>
-            <label for="">Atmospheric Pressure (Pa): {{weather.pressure}}</label><br>
-            <label for="">Humidity: {{weather.humidity}}%</label><br>
-            <small><i>To convert kelvin to °C: (temp in kelvin)K-273.15 = -273.1°C</i></small>
+
+
+        <div class="card">
+            <h5 class="card-header">Temp <img src="https://img.icons8.com/color/30/000000/thermometer.png" /></h5>
+            <div class="card-body">
+                <p class="card-text">{{weather.temp}} K</p>
+            </div>
         </div>
+
+
+        <div class="card">
+            <h5 class="card-header">Description</h5>
+            <div class="card-body">
+                <img src="http://openweathermap.org/img/w/{{weather.icon}}.png" alt="image">{{weather.description|capitalize}}
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h5 class="card-header">Pressure(Pa) <img src="https://img.icons8.com/offices/30/000000/atmospheric-pressure.png" /></h5>
+            <div class="card-body">
+                <p class="card-text">{{weather.pressure}}</p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h5 class="card-header">Humidity <img src="https://img.icons8.com/officel/30/000000/humidity.png" />
+            </h5>
+            <div class="card-body">
+                <p class="card-text">{{weather.humidity}}</p>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h5 class="card-header">Visibility <img src="https://img.icons8.com/office/40/000000/visible.png" />
+            </h5>
+            <div class="card-body">
+                <p class="card-text">{{weather.visibility}} Meters</p>
+            </div>
+        </div>
+
     </div>
+    <small><i>To convert kelvin to °C: (temp in kelvin)K-273.15 = -273.1°C</i></small>
+
 </div>
 
 
